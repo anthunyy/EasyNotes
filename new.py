@@ -4,7 +4,7 @@ from tkinter import *
 
 root = tk.Tk()
 root.title("EasyNotes")
-root.option_add("*tearOff", False) # This is always a good idea
+root.option_add("*tearOff", False)
 root.iconbitmap("icon/icon.ico")
 
 # Make the app responsive
