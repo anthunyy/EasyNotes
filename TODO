@@ -1,0 +1,20 @@
+TODO:
+
+Main:
+- Add way to edit file and category names
+- Cleanup code and comments
+- Remove ugly bar above tree
+- Add more icons and make things overall look nicer
+- Fix dupe filenames "bug"
+- Make distrabutable somehow
+- Eventually get official icons so they are not just pulled from internet
+- More
+- Add way to get suggestions/report issues (low priority)
+
+Wishlist:
+- Make it read md files
+- Make it able to open files to serve as a sort of project hub
+- Add settings?
+- Have notr files serve as a refrence where if you do not have the files, it can provide a link to download them. This would serve as a way for projects to be shared. 
+- Add a website and donation page if it gets any actual users.
+- More to come
