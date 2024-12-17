@@ -119,7 +119,7 @@ unsaved_changes = {}
 
 # GUI Setup
 root = tk.Tk()
-root.title("EasyNotes")
+root.title("Notetree")
 root.geometry("1000x600")
 
 # Add icon
