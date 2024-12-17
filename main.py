@@ -16,6 +16,18 @@ def open_project():
         project_name = list(notr_data.keys())[0]  # Assume first key is project name
         load_treeview(notr_data, project_dir, project_name, notr_file_path)
 
+# Function to create a new project
+def create_new_project():
+    global project_dir, notr_data, project_name, notr_file_path
+    project_dir = filedialog.askdirectory(title="Select Project Directory")
+    if project_dir:
+        project_name = simpledialog.askstring("Project Name", "Enter project name:")
+        if project_name:
+            # Ensure .notr extension is added
+            project_name = project_name if project_name.endswith(".notr") else f"{project_name}.notr"
+            notr_data, notr_file_path = create_project(project_dir, project_name[:-5])  # Strip .notr for internal name
+            load_treeview(notr_data, project_dir, project_name[:-5], notr_file_path)
+
 # Function to load data into the treeview
 def load_treeview(notr_data, project_dir, project_name, notr_file_path):
     treeview.delete(*treeview.get_children())  # Clear the treeview
@@ -86,6 +98,10 @@ def create_new_text_file():
         parent_node = selected_item[0]
         new_file_name = simpledialog.askstring("New Text File", "Enter text file name:")
         if new_file_name:
+            # Ensure .txt extension
+            if not new_file_name.endswith(".txt"):
+                new_file_name += ".txt"
+
             item_values = treeview.item(parent_node, "values")
             if "folder" in item_values:  # Allow only in folders
                 file_path = os.path.join(item_values[1], new_file_name)
@@ -120,6 +136,7 @@ buttons_frame = ttk.Frame(root)
 buttons_frame.pack(side="top", fill="x", padx=10, pady=10)
 
 ttk.Button(buttons_frame, text="Open Project", command=open_project).pack(side="left", padx=5)
+ttk.Button(buttons_frame, text="New Project", command=create_new_project).pack(side="left", padx=5)
 ttk.Button(buttons_frame, text="Save All", command=save_file).pack(side="left", padx=5)
 ttk.Button(buttons_frame, text="New Category", command=create_new_category).pack(side="left", padx=5)
 ttk.Button(buttons_frame, text="New Text File", command=create_new_text_file).pack(side="left", padx=5)
