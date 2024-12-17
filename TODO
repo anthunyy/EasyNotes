@@ -1,9 +1,15 @@
 TODO:
 
+BUGS:
+- Notr files not properly saving
+- Files not fully cached: Still makes folders and files just leaves text files empty.
+
+
 Main:
 - Add way to edit file and category names
+- Make notr not just a renamed JSON
 - Cleanup code and comments
-- Remove ugly bar above tree
+- Remove ugly bar above tree or make it useful
 - Add more icons and make things overall look nicer
 - Fix dupe filenames "bug"
 - Make distrabutable somehow
